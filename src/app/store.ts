@@ -1,7 +1,11 @@
 import {configureStore} from '@reduxjs/toolkit';
 
+import notesReducer from '@components/NoteList/features/notesSlice';
+
 export const store = configureStore({
-  reducer: {},
+  reducer: {
+    notes: notesReducer,
+  },
 });
 
 export type RootState = ReturnType<typeof store.getState>;
