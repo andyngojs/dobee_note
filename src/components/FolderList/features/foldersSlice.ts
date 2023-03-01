@@ -4,10 +4,16 @@ import { IFolder } from "@model/folders";
 
 const initialState: IFolder[] = [
   {
-    name: 'todo',
+    name: 'folder-1',
     create_at: '27/02/2023',
     notes: [],
     id: '1'
+  },
+  {
+    name: 'folder-2',
+    create_at: '27/02/2023',
+    notes: [],
+    id: '2'
   }
 ]
 

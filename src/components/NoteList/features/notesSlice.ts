@@ -6,20 +6,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 
 const initialState: INote[] = [
-  {
-    title: 'Reminder',
-    content: 'djsfbcjasbcjasbcjas',
-    created_at: '26-02-2023',
-    folder: '',
-    id: 1
-  },
-  {
-    title: 'Reminder',
-    content: 'djsfbcjasbcjasbcjas',
-    created_at: '26-02-2023',
-    folder: '',
-    id: 2
-  }
+
 ];
 
 export const notesSlice = createSlice({

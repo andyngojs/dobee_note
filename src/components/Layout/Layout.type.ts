@@ -1,14 +1,16 @@
-import {INote} from '@model/notes';
+type itemFlatListProps<T> = {
+  item: T;
+  index: number;
+};
 
-export interface LayoutProps {
+type renderItemFlatListProps<T> = ({
+  item,
+  index,
+}: itemFlatListProps<T>) => React.ReactElement | null;
+
+export interface LayoutProps<T> {
   buttonType: string;
-  data: INote[];
-  renderItem: ({
-    item,
-    index,
-  }: {
-    item: INote;
-    index: number;
-  }) => React.ReactElement | null;
+  data: T[];
+  renderItem: renderItemFlatListProps<T>;
   renderEmpty?: () => React.ReactElement | null;
-}
+};

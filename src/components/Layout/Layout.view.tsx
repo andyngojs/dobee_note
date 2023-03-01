@@ -4,14 +4,19 @@ import {View, Text, StyleSheet, FlatList} from 'react-native';
 import Button from '@components/Button';
 import {LayoutProps} from './Layout.type';
 
-
-const _Layout: React.FC<LayoutProps> = ({buttonType, data, renderEmpty, renderItem}) => {
+const _Layout: React.FC<LayoutProps<any>> = ({
+  buttonType,
+  data,
+  renderEmpty,
+  renderItem,
+}) => {
   return (
     <View style={styles.container}>
-      <FlatList 
-        data={data} 
+      <FlatList
+        data={data || []}
         keyExtractor={(_, index) => index.toString()}
         renderItem={!!renderItem && renderItem}
+        ListEmptyComponent={renderEmpty}
       />
 
       <Button type={buttonType} />
@@ -21,7 +26,7 @@ const _Layout: React.FC<LayoutProps> = ({buttonType, data, renderEmpty, renderIt
 
 const styles = StyleSheet.create({
   container: {
-    marginHorizontal: 15,
+    // marginHorizontal: 15,
     paddingTop: 15,
     flex: 1,
   },
